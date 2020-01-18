@@ -1,18 +1,15 @@
-<#import "common.ftl" as c>
+<#import "parts/common.ftl" as c>
 <@c.page>
-    ${title}
+    <div class="container">
+        ${title}
+        <form action="/person" method="post">
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="What is your name?">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <#-- <input type="hidden" name="_csrf" value="${_csrf.token}"/>-->
+        </form>
 
-    <form action="/person" method="post">
-        <div>
-            <input type="text" name="name">
-            <button type="submit">Post</button>
-        </div>
-        <div>
-        </div>
-        <#-- <input type="hidden" name="_csrf" value="${_csrf.token}"/>-->
-    </form>
-    <div>
-        <p>user name is </p>
         <#if personName??>
             Hi ${personName}, How are you?
         </#if>
