@@ -13,5 +13,6 @@
         <#if personName??>
             Hi ${personName}, How are you?
         </#if>
+        <a href="/projects/notes">Bep</a>
     </div>
 </@c.page>
